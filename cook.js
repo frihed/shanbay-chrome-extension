@@ -205,19 +205,16 @@ function imageLink() {
 }
 
 function collinsSalad(word) {
-    if (collinsEnabled()) {
         if (options.useBaiduCollins && preloadResult && preloadResult.word === currentWord) {
             loadDefineFromBaiduDict(preloadResult.data);
-        } else {
+        } else if (collinsEnabled()) {
             loadDefineFromShanbay(word);
         }
-    }
 }
 
 // 判断柯林斯辞典是否过期
 function collinsEnabled() {
-    //collinsPayed = $('a.defn-trigger.collins.sblink').css('display') === 'inline';
-    collinsPayed=true;
+    collinsPayed = $('a.defn-trigger.collins.sblink').css('display') === 'inline';
     return collinsPayed;
 }
 
