@@ -216,7 +216,8 @@ function collinsSalad(word) {
 
 // 判断柯林斯辞典是否过期
 function collinsEnabled() {
-    collinsPayed = $('a.defn-trigger.collins.sblink').css('display') === 'inline';
+    //collinsPayed = $('a.defn-trigger.collins.sblink').css('display') === 'inline';
+    collinsPayed=true;
     return collinsPayed;
 }
 
